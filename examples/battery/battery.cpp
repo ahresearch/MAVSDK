@@ -88,6 +88,7 @@ int main(int argc, char** argv)
 
     while (true) {
         send_battery_status(mavlink_passthrough);
+        std::cout << "send_battery_status()" << std::endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
@@ -97,7 +98,7 @@ int main(int argc, char** argv)
 void subscribe_armed(Telemetry& telemetry)
 {
     telemetry.subscribe_armed(
-        [](bool is_armed) { std::cout << (is_armed ? "armed" : "disarmed") << '\n'; });
+        [&telemetry](bool is_armed) { std::cout << (is_armed ? "armed" : "disarmed") << '\n'; std::cout << "Battery: " << telemetry.battery() << std::endl; });
 }
 
 void send_battery_status(MavlinkPassthrough& mavlink_passthrough)
