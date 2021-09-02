@@ -1,26 +1,25 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.10.2)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(dig_twin_mission)
 
-find_package(Threads REQUIRED)
-
-if(NOT MSVC)
-    add_definitions("-std=c++11 -Wall -Wextra -Werror")
-else()
-    add_definitions("-std=c++11 -WX -W2")
-endif()
-
-find_package(MAVSDK REQUIRED)
-
 add_executable(dig_twin_mission
-    mavsdk_helper.cpp
     dig_twin_mission.cpp
 )
 
+find_package(MAVSDK REQUIRED)
+
 target_link_libraries(dig_twin_mission
     MAVSDK::mavsdk_action
-    MAVSDK::mavsdk_mission
+    MAVSDK::mavsdk_mission_raw
     MAVSDK::mavsdk_telemetry
     MAVSDK::mavsdk
-    ${CMAKE_THREAD_LIBS_INIT}
 )
+
+if(NOT MSVC)
+    add_compile_options(dig_twin_mission PRIVATE -Wall -Wextra)
+else()
+    add_compile_options(dig_twin_mission PRIVATE -WX -W2)
+endif()

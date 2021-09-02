@@ -169,33 +169,6 @@ dig_twin_mission.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dig_twin_mission.dir/build.make CMakeFiles/dig_twin_mission.dir/dig_twin_mission.cpp.s
 .PHONY : dig_twin_mission.cpp.s
 
-mavsdk_helper.o: mavsdk_helper.cpp.o
-
-.PHONY : mavsdk_helper.o
-
-# target to build an object file
-mavsdk_helper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dig_twin_mission.dir/build.make CMakeFiles/dig_twin_mission.dir/mavsdk_helper.cpp.o
-.PHONY : mavsdk_helper.cpp.o
-
-mavsdk_helper.i: mavsdk_helper.cpp.i
-
-.PHONY : mavsdk_helper.i
-
-# target to preprocess a source file
-mavsdk_helper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dig_twin_mission.dir/build.make CMakeFiles/dig_twin_mission.dir/mavsdk_helper.cpp.i
-.PHONY : mavsdk_helper.cpp.i
-
-mavsdk_helper.s: mavsdk_helper.cpp.s
-
-.PHONY : mavsdk_helper.s
-
-# target to generate assembly for a file
-mavsdk_helper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dig_twin_mission.dir/build.make CMakeFiles/dig_twin_mission.dir/mavsdk_helper.cpp.s
-.PHONY : mavsdk_helper.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -208,9 +181,6 @@ help:
 	@echo "... dig_twin_mission.o"
 	@echo "... dig_twin_mission.i"
 	@echo "... dig_twin_mission.s"
-	@echo "... mavsdk_helper.o"
-	@echo "... mavsdk_helper.i"
-	@echo "... mavsdk_helper.s"
 .PHONY : help
 
 
